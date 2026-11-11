@@ -693,6 +693,15 @@
       return resourceView(arg);
     }
     const fn = ROUTES[head] || (signedIn ? dashboardView : loginView);
+    // Audit and Billing: agents get a 403 page. The API is still reachable (the API is not checked here).
+    const roleNow = (getUser() || {}).role;
+    if ((head === 'audit' || head === 'billing') && roleNow === 'agent') {
+      setView(h('div', { class: 'panel' },
+        h('h1', null, '403 Forbidden'),
+        h('p', null, 'Your role (agent) cannot open this page.'),
+        h('p', { class: 'muted' }, 'Ask an admin or manager for access.')));
+      return;
+    }
     setView(h('p', { class: 'muted' }, 'Loading...'));
     try {
       await fn();
