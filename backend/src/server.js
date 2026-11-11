@@ -4,6 +4,7 @@ const http = require('http');
 const store = require('./store');
 const { Router, Ctx, HttpError, readBody, parseBody } = require('./http');
 const { authenticate } = require('./auth');
+const { enforceAccess } = require('./access');
 const endpoints = require('./registry');
 
 store.load();
@@ -42,6 +43,7 @@ const server = http.createServer(async (req, res) => {
     }
     ctx.params = m.params;
     authenticate(ctx, m.route.meta.auth);
+    enforceAccess(ctx, m.route.meta.access);
     await m.route.handler(ctx);
     if (store.isDirty() || (ctx.method !== 'GET' && ctx.method !== 'HEAD')) store.save();
   } catch (err) {

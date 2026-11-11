@@ -11,6 +11,9 @@ const endpoints = [
   ...misc,
 ];
 
+// Attach the authorization policy (planted issues RBAC-01 to RBAC-50) to each endpoint.
+require('./access').attachTo(endpoints);
+
 // Share the metadata list with the /api/meta/endpoints handler.
 misc.ALL_META.push(...endpoints.map((e) => e.meta));
 

@@ -132,11 +132,15 @@
     ['#/billing', 'Billing'], ['#/audit', 'Audit'], ['#/reports', 'Reports'], ['#/tools', 'Tools'], ['#/graphql', 'GraphQL'],
     ['#/agent', 'AI agent'], ['#/admin', 'Admin'], ['#/monitor', 'Monitoring'], ['#/account', 'Account'], ['#/explorer', 'API Explorer'],
   ];
+  // Menu visibility by role. Hidden items still open by typing the URL (the router does not check roles).
+  const NAV_ROLES = { '#/admin': ['admin'], '#/audit': ['admin', 'manager'], '#/billing': ['admin', 'manager'] };
   function renderNav(route) {
     const nav = $('#nav');
     nav.innerHTML = '';
     if (!getToken()) return;
+    const role = (getUser() || {}).role;
     for (const [href, label] of NAV) {
+      if (NAV_ROLES[href] && !NAV_ROLES[href].includes(role)) continue;
       nav.appendChild(h('a', { href, class: route === href.slice(1) || (href === '#/dashboard' && route === '') ? 'active' : '' }, label));
     }
   }

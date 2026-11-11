@@ -8,6 +8,7 @@
 - 151 API endpoints, all listed in the UI under **API Explorer** (each has a *Try* button).
 - Data is stored in a JSON file (`backend/data/db.json`). No paid database.
 - Weaknesses for each category are listed in [VULNERABILITIES.md](VULNERABILITIES.md).
+- 50 planted access-control issues (admin actions open to other roles, cross-tenant reads) are listed in [RBAC-ISSUES.md](RBAC-ISSUES.md).
 
 ## Demo accounts
 
