@@ -2,3 +2,6 @@ node_modules/
 backend/data/
 backend/uploads/
 *.tmp
+
+# Perfai onboarding exports and extracted logs: local only, never publish
+AppId 6af3c9c9acf63c74c43b31a4/
