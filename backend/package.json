@@ -1,0 +1,16 @@
+{
+  "name": "crm-sample-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sample multi-tenant CRM API (dummy app for testing only)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "graphql": "16.9.0"
+  }
+}

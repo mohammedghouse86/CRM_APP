@@ -1,0 +1,143 @@
+﻿#,Category,Engine name,Group,Status
+1,BOLA - Cross-Tenant Read (Agent via API),Agent_Api_XTenant_Read,AI agent access,Running
+2,BOLA - Cross-Tenant Delete (Agent via API),Agent_Api_XTenant_Delete,AI agent access,Running
+3,BOLA - Cross-Tenant Write (Agent via API),Agent_Api_XTenant_Update,AI agent access,Running
+4,Search Data Leak - Cross-Tenant (Agent via API),Agent_Api_Search_XTenant,AI agent access,Running
+5,BOLA - Same-Tenant Cross-Role Read (Agent via API),Agent_Api_SameTenant_Read,AI agent access,Running
+6,Search Data Leak - Same-Tenant Cross-Role (Agent via API),Agent_Api_Search_SameTenant,AI agent access,Running
+7,BFLA - Cross-Tenant Action (Agent via API),Agent_Api_XTenant_Execute,AI agent access,Running
+8,BOLA - Same-Tenant Cross-Role Delete (Agent via API),Agent_Api_SameTenant_Delete,AI agent access,Running
+9,BOLA - Same-Tenant Cross-Role Write (Agent via API),Agent_Api_SameTenant_Update,AI agent access,Running
+10,Broken Function Level Authorization,Broken Function Level Authorization,Access control,Running
+11,Search Data Leak,Search_Data_Leak,Access control,Running
+12,BOLA,BOLA,Access control,Running
+13,Data Access Authorization Anomaly (BOLA),Data_Access_Authorization_Anomaly,Access control,Running
+14,Same-Tenant Resource Ownership Bypass (BOLA),BOLA_Same_Tenant_Ownership,Access control,Running
+15,RBAC,RBAC,Access control,Running
+16,Cross-User Data Contamination,CrossUser_Data_Contamination,Access control,Running
+17,Search Data Leak - Cross-Tenant (Application),App_Search_XTenant,Access control,Running
+18,Search Data Leak - Same-Tenant Cross-Role (Application),App_Search_SameTenant,Access control,Running
+19,BFLA,BFLA,Access control,Running
+20,BOLA Cross Roles (Tenant),BOLA_Cross_Roles,Access control,Running
+21,BOLA Cross-Tenant Role Access,BOLA_Cross_Tenant,Access control,Running
+22,Privilege Escalation,Privilege Escalation,Access control,Running
+23,Cross-Tenant Data Contamination,Cross-Tenant Data Contamination,Access control,Running
+24,Query Parameter Toggle,Query_Param_Toggle,Access control,Running
+25,BRLA,BRLA,Access control,Running
+26,BTLA,BTLA,Access control,Running
+27,Broken Authentication,Authorization_Missing,Authentication & tokens,Running
+28,Authorization (Valid),Authorization_Valid,Authentication & tokens,Running
+29,Credential Exposure via URL Parameters,Credential Exposure via URL Parameters,Authentication & tokens,Running
+30,Unsafe Authentication Method,Unsafe Authentication Method,Authentication & tokens,Running
+31,Session Hijacking,Session Hijacking,Authentication & tokens,Running
+32,Insecure Session Cookie,Insecure Session Cookie,Authentication & tokens,Running
+33,Authentication (Invalid),Authentication_Invalid,Authentication & tokens,Running
+34,Unauthorized Token Generation,Unauthorized_Token_Generation,Authentication & tokens,Running
+35,Broken Token Signature Verification,Broken_Token_Signature_Verification,Authentication & tokens,Running
+36,Broken Token Tampered Payload,Broken_Token_Tampered_Payload,Authentication & tokens,Running
+37,Account Enumeration,Account_Enumeration,Authentication & tokens,Running
+38,Authorization (Expired),Authorization_Expired,Authentication & tokens,Running
+39,Broken Logout,Broken_Logout,Authentication & tokens,Running
+40,Insecure Credential Handling,Insecure_Credential_Handling,Authentication & tokens,Running
+41,Weak Authorization,Weak Authorization,Authentication & tokens,Running
+42,Login CSRF,Login CSRF,Authentication & tokens,Running
+43,Cross Environment Token Acceptance,Cross_Environment_Token_Acceptance,Authentication & tokens,Running
+44,Unsafe HTTP Method for Authentication Operations,Unsafe_Auth_Method,Authentication & tokens,Running
+45,Cross Application Token Acceptance,Cross_Application_Token_Acceptance,Authentication & tokens,Running
+46,Credential Exposure via URL Parameters,Credential_In_URL,Authentication & tokens,Running
+47,Authorization (Invalid),Authorization_Invalid,Authentication & tokens,Running
+48,Broken Token Revocation,Broken_Token_Revocation,Authentication & tokens,Running
+49,Expired Authorization,Expired Authorization,Authentication & tokens,Running
+50,Read (Valid),DB_Read,Business-logic writes,Running
+51,Write (Valid),DB_Write,Business-logic writes,Running
+52,Audit Data Tampering,Audit_Data_Tampering,Business-logic writes,Running
+53,Mass Assignment,Mass_Assignment,Business-logic writes,Running
+54,Creation-Time Injection,Creation_Time_Injection,Business-logic writes,Running
+55,Currency / Exchange-Rate Write Bypass,Pac_Attr_Currency_Write_Bypass,Business-logic writes,Running
+56,Discount / Coupon Write Bypass,Pac_Attr_Discount_Write_Bypass,Business-logic writes,Running
+57,Price / Amount Write Bypass,Pac_Attr_Price_Write_Bypass,Business-logic writes,Running
+58,Quantity / Inventory Write Bypass,Pac_Attr_Quantity_Write_Bypass,Business-logic writes,Running
+59,Workflow-Gate Write Bypass,Pac_Attr_Workflow_Gate_Write_Bypass,Business-logic writes,Running
+60,Priority / Escalation Write Bypass,Pac_Attr_Priority_Write_Bypass,Business-logic writes,Running
+61,SLA Due-Date Write Bypass,Pac_Attr_Sla_Due_Date_Write_Bypass,Business-logic writes,Running
+62,Soft-Delete State Write Bypass,Pac_Attr_Soft_Delete_State_Write_Bypass,Business-logic writes,Running
+63,Malicious File Acceptance,Malicious_File_Acceptance,Business-logic writes,Running
+64,Credit / Balance Write Bypass,Pac_Attr_Credit_Balance_Write_Bypass,Business-logic writes,Running
+65,Audit-Correlation Write Bypass,Pac_Attr_Audit_Correlation_Bypass,Business-logic writes,Running
+66,Creation Attribution Bypass,Pac_Attr_Creation_Attribution_Bypass,Business-logic writes,Running
+67,Creation Timestamp Bypass,Pac_Attr_Creation_Timestamp_Bypass,Business-logic writes,Running
+68,Concurrency-Control Bypass,Pac_Attr_Concurrency_Control_Bypass,Business-logic writes,Running
+69,Deletion-Attribution Write Bypass,Pac_Attr_Deletion_Attribution_Bypass,Business-logic writes,Running
+70,Modification Attribution Bypass,Pac_Attr_Modification_Attribution_Bypass,Business-logic writes,Running
+71,Modification Timestamp Bypass,Pac_Attr_Modification_Timestamp_Bypass,Business-logic writes,Running
+72,CORS (Exist),CORS (Exist),Configuration & transport,Running
+73,CORS (Exist),CORS_Exist,Configuration & transport,Running
+74,SSL Cert Self-Signed,SSL Cert Self-Signed,Configuration & transport,Running
+75,SSL Certificate Expiration (<15 days),SSL Certificate Expiration (<15 days),Configuration & transport,Running
+76,TLS Version (>TLS1.2),TLS Version (>TLS1.2),Configuration & transport,Running
+77,Missing Security Headers,Missing Security Headers,Configuration & transport,Running
+78,Header Strict-Transport-Security,Header Strict-Transport-Security,Configuration & transport,Running
+79,Header Strict Transport Security,Header_Strict_Transport_Security,Configuration & transport,Running
+80,HTTP Redirection,HTTP Redirection,Configuration & transport,Running
+81,Monitoring Endpoint,Monitoring_Endpoint,Data exposure,Running
+82,Debug Endpoint,Debug Endpoint,Data exposure,Running
+83,Excessive_Data_Exposure,Excessive_Data_Exposure,Data exposure,Running
+84,Nested Sensitive Data Exposure,Nested Sensitive Data Exposure,Data exposure,Running
+85,Sensitive Data Exposure,Sensitive Data Exposure,Data exposure,Running
+86,Sensitive Data in Error & Metadata Responses,Error_Metadata_Exposure,Data exposure,Running
+87,Guessable & Enumerable Object Identifiers,Guessable_Identifiers,Data exposure,Running
+88,Enumerable Resource ID,Enumerable Resource ID,Data exposure,Running
+89,Shadow Data,Shadow Data,Data exposure,Running
+90,GraphQL Field Suggestions Enabled,GraphQL Field Suggestions Enabled,GraphQL,Running
+91,GraphQL IDE Exposed,GraphQL IDE Exposed,GraphQL,Running
+92,GraphQL Introspection Enabled,GraphQL Introspection Enabled,GraphQL,Running
+93,Unrestricted GraphQL Batching,Unrestricted GraphQL Batching,GraphQL,Running
+94,GraphQL Mutation Accepted Over GET,GraphQL Mutation Accepted Over GET,GraphQL,Running
+95,Unbounded GraphQL Query Complexity,Unbounded GraphQL Query Complexity,GraphQL,Running
+96,Client Side Request Forgery,Client Side Request Forgery,Injection & input,Running
+97,Command Injection,Command Injection,Injection & input,Running
+98,Input Validation,Input Validation,Injection & input,Running
+99,Path Traversal,Path Traversal,Injection & input,Running
+100,Server-Side Template Injection,Server-Side Template Injection,Injection & input,Running
+101,XSS,XSS,Injection & input,Running
+102,SSRF,SSRF,Injection & input,Running
+103,Rate-Limit (Exist),Rate_Limit_Exist,Resource limits,Running
+104,Slow_Endpoint_Response,Slow_Endpoint_Response,Resource limits,Running
+105,Broken Pagination Limit,Pagination_Invalid,Resource limits,Running
+106,Date Filter (Negative),Date_Filter_Invalid,Resource limits,Running
+107,Agent_Prompt_SameTenant_Delete,Agent_Prompt_SameTenant_Delete,AI agent access,"On, never ran (30 days)"
+108,Agent_Prompt_SameTenant_Execute,Agent_Prompt_SameTenant_Execute,AI agent access,"On, never ran (30 days)"
+109,Agent_Prompt_SameTenant_Read,Agent_Prompt_SameTenant_Read,AI agent access,"On, never ran (30 days)"
+110,Agent_Prompt_SameTenant_Update,Agent_Prompt_SameTenant_Update,AI agent access,"On, never ran (30 days)"
+111,Agent_Prompt_Search_SameTenant,Agent_Prompt_Search_SameTenant,AI agent access,"On, never ran (30 days)"
+112,Agent_Prompt_Search_XTenant,Agent_Prompt_Search_XTenant,AI agent access,"On, never ran (30 days)"
+113,Agent_Prompt_XTenant_Delete,Agent_Prompt_XTenant_Delete,AI agent access,"On, never ran (30 days)"
+114,Agent_Prompt_XTenant_Execute,Agent_Prompt_XTenant_Execute,AI agent access,"On, never ran (30 days)"
+115,Agent_Prompt_XTenant_Read,Agent_Prompt_XTenant_Read,AI agent access,"On, never ran (30 days)"
+116,Agent_Prompt_XTenant_Update,Agent_Prompt_XTenant_Update,AI agent access,"On, never ran (30 days)"
+117,BFLA - Same-Tenant Action (Agent via API),Agent_Api_SameTenant_Execute,AI agent access,"On, never ran (30 days)"
+118,BAC_Inconsistent_Permissions,BAC_Inconsistent_Permissions,Access control,"On, never ran (30 days)"
+119,BPLA,BPLA,Access control,"On, never ran (30 days)"
+120,Blind Mutate / IDOR,Blind_Mutate_IDOR,Business-logic writes,"On, never ran (30 days)"
+121,Composite Bypass,Composite_Bypass,Business-logic writes,"On, never ran (30 days)"
+122,Create Bypass,Create_Bypass,Business-logic writes,"On, never ran (30 days)"
+123,Delete Equivalence,Delete_Equivalence,Business-logic writes,"On, never ran (30 days)"
+124,Ownership-Assignment Write Bypass,Pac_Attr_Ownership_Assignment_Write_Bypass,Business-logic writes,"On, never ran (30 days)"
+125,Primary-Key Write Bypass,Pac_Attr_Primary_Key_Write_Bypass,Business-logic writes,"On, never ran (30 days)"
+126,Quota / Rate-Limit Write Bypass,Pac_Attr_Quota_Limit_Write_Bypass,Business-logic writes,"On, never ran (30 days)"
+127,Relationship-Key Write Bypass,Pac_Attr_Relationship_Key_Write_Bypass,Business-logic writes,"On, never ran (30 days)"
+128,Subscription Entitlement Write Bypass,Pac_Attr_Entitlement_Write_Bypass,Business-logic writes,"On, never ran (30 days)"
+129,Tenant-Boundary Write Bypass,Pac_Attr_Tenant_Boundary_Write_Bypass,Business-logic writes,"On, never ran (30 days)"
+130,Update Method Bypass,Update_Method_Bypass,Business-logic writes,"On, never ran (30 days)"
+131,Verification-Status Write Bypass,Pac_Attr_Verification_Status_Write_Bypass,Business-logic writes,"On, never ran (30 days)"
+132,access-check,access-check,Customer custom category,"On, never ran (30 days)"
+133,grades-modification-restriction,grades-modification-restriction,Customer custom category,"On, never ran (30 days)"
+134,policy-holder-modification-after-expiry,policy-holder-modification-after-expiry,Customer custom category,"On, never ran (30 days)"
+135,sbac-matrix-data-integrity,sbac-matrix-data-integrity,Customer custom category,"On, never ran (30 days)"
+136,Unbounded GraphQL Query Depth,Unbounded GraphQL Query Depth,GraphQL,"On, never ran (30 days)"
+137,Privilege Escalation,Privilege_Escalation,Access control,Disabled
+138,Authentication (Valid),Authentication_Valid,Authentication & tokens,Disabled
+139,Broken Authentication (Cross-Application Token Acceptance),Broken Authentication (Cross-Application Token Acceptance),Authentication & tokens,Disabled
+140,Broken Authentication (Cross-Environment Token Acceptance),Broken Authentication (Cross-Environment Token Acceptance),Authentication & tokens,Disabled
+141,NOSQL_Injection,NOSQL_Injection,Injection & input,Disabled
+142,SQL_Injection,SQL_Injection,Injection & input,Disabled

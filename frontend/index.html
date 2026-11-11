@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample CRM (dummy app)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Sample CRM <span class="tag">dummy app</span></div>
+    <nav id="nav" class="nav"></nav>
+    <div class="who" id="who"></div>
+  </header>
+  <main id="view" class="view"><p class="muted">Loading...</p></main>
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-head"><strong id="modal-title"></strong><button id="modal-close" class="btn ghost" type="button">Close</button></div>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+  <footer class="footer">
+    Sample app for testing purposes only. All data is dummy data and the app contains intentional weaknesses. Do not enter real personal or business data.
+  </footer>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
