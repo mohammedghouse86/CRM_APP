@@ -67,3 +67,4 @@ Each issue has `enforced: false` in `backend/src/access.js`. The enforcement hel
 
 - The Admin page is hidden from the menu for manager and agent. The Audit and Billing pages are hidden from the menu for agent.
 - Hidden pages still open by URL (for example `#/admin`). The router does not check roles.
+- The Admin page loads fully for manager and agent, then redirects to the dashboard after about 1 second.

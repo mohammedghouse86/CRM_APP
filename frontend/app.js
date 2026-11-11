@@ -699,6 +699,13 @@
     } catch (e) {
       setView(h('p', { class: 'err' }, 'Error: ' + e.message));
     }
+    // Admin page: non-admin users see the page load, then get sent to the dashboard after about 1 second.
+    const role = (getUser() || {}).role;
+    if (head === 'admin' && role !== 'admin') {
+      setTimeout(() => {
+        if ((location.hash || '').replace(/^#\/?/, '').split('/')[0] === 'admin') location.hash = '#/dashboard';
+      }, 1000);
+    }
   }
 
   // re-render the current resource list (used by create/edit/delete)
