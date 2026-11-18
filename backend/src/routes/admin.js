@@ -4,7 +4,14 @@ const { HttpError } = require('../http');
 const { endpoint } = require('./_def');
 const { ensureObject, nowIso } = require('../resources');
 const { reseedTenantData } = require('../seed');
-const { ROLES } = require('../seed');
+const { ROLES, USERS: SEED_USERS } = require('../seed');
+
+// Demo accounts are the seeded users. They must never be disabled, so the demo
+// logins keep working for anyone testing the app. Other accounts can still be disabled.
+const DEMO_EMAILS = new Set(SEED_USERS.map((u) => u.email));
+function assertNotDemoAccount(u) {
+  if (DEMO_EMAILS.has(u.email)) throw new HttpError(403, 'Demo accounts cannot be disabled', { email: u.email });
+}
 const { DEFAULT_ENV } = require('../auth');
 
 const G = 'Tenants, users & roles';
@@ -93,15 +100,17 @@ module.exports = [
   E('DELETE', '/api/users/:id', { title: 'Delete user', auth: 'api', sample: { params: { id: 9 } }, vulns: [19], desc: 'Any signed-in user can disable and mark a user deleted.' }, async (ctx) => {
     const u = store.db.users.find((x) => x.id === Number(ctx.params.id));
     if (!u) throw new HttpError(404, 'User not found');
+    assertNotDemoAccount(u);
     u.disabled = true;
     u.deleted = true;
     store.touch();
     return ctx.json(200, { deleted: true, id: u.id });
   }),
 
-  E('POST', '/api/admin/users/:id/disable', { title: 'Disable user (admin)', auth: 'api', sample: { params: { id: 9 } }, vulns: [10, 19], desc: 'Admin-only action with no role check.' }, async (ctx) => {
+  E('POST', '/api/admin/users/:id/disable', { title: 'Disable user (admin)', auth: 'api', sample: { params: { id: 9 } }, vulns: [10, 19], desc: 'Admin-only action with no role check. Demo accounts are refused.' }, async (ctx) => {
     const u = store.db.users.find((x) => x.id === Number(ctx.params.id));
     if (!u) throw new HttpError(404, 'User not found');
+    assertNotDemoAccount(u);
     u.disabled = true;
     store.touch();
     return ctx.json(200, { disabled: true, id: u.id });
