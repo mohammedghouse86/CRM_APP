@@ -92,6 +92,9 @@ module.exports = [
   E('PATCH', '/api/users/:id', { title: 'Update user', auth: 'api', sample: { params: { id: 3 }, body: { role: 'manager' } }, vulns: [22, 125, 131], desc: 'Any field can be written, including role, verified flag and id.' }, async (ctx) => {
     const u = store.db.users.find((x) => x.id === Number(ctx.params.id));
     if (!u) throw new HttpError(404, 'User not found');
+    if (Object.prototype.hasOwnProperty.call(ensureObject(ctx.body), 'password')) {
+      throw new HttpError(403, 'Password change is disabled in this demo app');
+    }
     Object.assign(u, ensureObject(ctx.body));
     store.touch();
     return ctx.json(200, publicUser(u));
@@ -119,6 +122,7 @@ module.exports = [
   E('POST', '/api/admin/users/:id/reset-password', { title: 'Reset user password (admin)', auth: 'api', sample: { params: { id: 3 } }, vulns: [19, 40], desc: 'No admin check. Returns the new password in clear text.' }, async (ctx) => {
     const u = store.db.users.find((x) => x.id === Number(ctx.params.id));
     if (!u) throw new HttpError(404, 'User not found');
+    throw new HttpError(403, 'Password reset is disabled in this demo app');
     u.password = 'Reset-' + Math.floor(1000 + Math.random() * 8999);
     store.touch();
     return ctx.json(200, { id: u.id, temporaryPassword: u.password });

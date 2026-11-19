@@ -84,6 +84,7 @@ module.exports = [
   }),
 
   E('POST', '/api/auth/password-reset', { title: 'Request password reset', auth: 'none', sample: { body: { email: 'ana.agent@northwind.example' } }, vulns: [37], desc: 'Reveals whether an email exists and returns the reset token in the response.' }, async (ctx) => {
+    throw new HttpError(403, 'Password reset is disabled in this demo app');
     const u = findUserByEmail(ctx.body.email);
     if (!u) throw new HttpError(404, 'No account with that email');
     const token = resetToken(u.id, 0);
@@ -91,6 +92,7 @@ module.exports = [
   }),
 
   E('POST', '/api/auth/password-reset/confirm', { title: 'Confirm password reset', auth: 'none', sample: { body: { token: '', newPassword: 'NewPass!1' } }, vulns: [41], desc: 'Reset tokens are predictable (user id plus minute).' }, async (ctx) => {
+    throw new HttpError(403, 'Password reset is disabled in this demo app');
     const id = String(ctx.body.token || '').split('-')[0];
     const u = store.db.users.find((x) => String(x.id) === id);
     if (!u) throw new HttpError(400, 'Invalid token');
@@ -102,6 +104,7 @@ module.exports = [
   }),
 
   E('POST', '/api/auth/change-password', { title: 'Change password', auth: 'api', sample: { body: { newPassword: 'NewPass!1' } }, vulns: [27], desc: 'Does not ask for the current password and accepts any userId.' }, async (ctx) => {
+    throw new HttpError(403, 'Password change is disabled in this demo app');
     const target = store.db.users.find((u) => u.id === Number(ctx.body.userId || ctx.user.id));
     if (!target) throw new HttpError(404, 'User not found');
     target.password = String(ctx.body.newPassword || '');
